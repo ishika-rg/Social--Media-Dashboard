@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+ 
+    font-size: 14px;
+    font-family: url(https://fonts.google.com/specimen/Inter);
+}
+
+/*  ========================ROOT COLORS ========================= */
+
+:root{
+  --bgColor:  hsl(225, 100%, 98%);
+  --bodyColor: white; 
+  --h3Color : hsl(230, 17%, 14%);
+  --h4h6color: hsl(228, 12%, 44%);
+  --cardBg : hsl(227, 47%, 96%);
+  --onHover : hsl(230, 22%, 74%);
+  --subHeading : hsl(228, 12%, 44%);
+}
+
+.darkTheme{
+
+  --bgColor:  hsl(232, 19%, 15%);
+  --bodyColor:  hsl(230, 17%, 14%); 
+  --h3Color : hsl(0, 0%, 100%);
+  --h4h6color: hsl(228, 12%, 44%);
+  --cardBg :  hsl(228, 28%, 20%);
+  --onHover: hsl(229, 27%, 27%);
+  --subHeading: hsl(0, 0%, 100%);
+
+}
+body{
+  background-color: var(--bodyColor) !important;
+  width: 100%;
+  height: 100%;
+}
+/* ===================toggle button css===================== */
+.checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .label {
+    width: 25px;
+    height: 12px;
+    background-color:hsl(230, 22%, 74%);
+    display: flex;
+    border-radius:50px;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 5px; */
+    position: relative;
+    transform: scale(1.5);
+  }
+  
+  .ball {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    /* top: 2px; */
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .label .ball{
+    transform: translateX(12px);
+  }
+  /* ========================css of page============================================ */
+ 
+  .bg{
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    background-color:   var(--bgColor); 
+    
+  }
+ 
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+  }
+
+  .cells{
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+  }
+  
+ .card1, .card2, .card3, .card4{
+   background-color: var(--cardBg);
+   border-radius: 5px;
+   cursor: pointer;
+ }
+ 
+ .cell-1, .cell-2, .cell-3, .cell-4, .cell-5, .cell-6, .cell-7, .cell-8{
+  background-color: var(--cardBg);
+  border-radius: 5px;
+  cursor: pointer;
+
+ }
+
+.btn1{
+  color:hsl(230, 22%, 74%);
+}
+ h6, h4{
+   color: var(--h4h6color);
+ }
+ h3{
+   color: var(--h3Color);
+   
+ }
+
+ /* =========================card css========================= */
+ .card1{
+   border-top: 3px solid hsl(208, 92%, 53%);
+ }
+ .card2{
+   border-top: 3px solid hsl(203, 89%, 53%);
+ }
+ .card3 {
+  border-top: 3px solid ;
+  border-image-slice: 1;
+  border-radius: 5px !important;
+ }
+ .border-gradient{
+  
+  border-image-source: linear-gradient(to left, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  /* position: relative; */
+  border-radius: 5px 5px 0 0 !important;
+ }
+ .card4{
+  border-top: 3px solid hsl(348, 97%, 39%);
+
+ }
+.card-titles{
+  font-size: 40px ;
+  color: var(--h3Color);
+}
+.cardfooter{
+ color:  hsl(163, 72%, 41%);
+  
+}
+.card-text{
+  letter-spacing: 7px;
+  font-size: 11px !important;
+  color: hsl(228, 12%, 44%);
+}
+ .u {
+  color: hsl(356, 69%, 56%);
+}
+.header h6{
+  margin-top: 0.1rem;
+}
+ 
+ /* ==========================CELL CSS =========================== */
+
+
+  .cell-text{
+   
+    font-size: 11px !important;
+    color: hsl(228, 12%, 44%);
+  }
+
+  .g{
+    color: hsl(163, 72%, 41%);
+  }
+  .r{
+    color: hsl(356, 69%, 56%);
+
+  }
+  .cell-title{
+    color: var(--h3Color);
+  }
+
+  .sub-heading{
+    color: var(--subHeading);
+  }
+
+
+
+  /* ======================    DARK MODE CSS ============================== */
+
+  .darkmode{
+    background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  }
+   .darkMode{
+    color:  hsl(0, 0%, 100%);
+  }
+ 
+/* =====================================RESPONSIVE CSS================== */
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 50%);
+    grid-gap: 20px;
+  
+  }
+
+  .cells{
+    display: grid;
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+  }
+
+  body{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+  .cells{
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+  .dashboard .nav{
+    display: block !important;
+  }
+  .right{
+    display: flex;
+    justify-content: space-between;
+  }
+  .label{
+    margin-right: 5px;
+  }
+  .container{
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    margin-bottom: 20px;
+  }
+  .line{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid var(--h4h6color);
+  }
+
+
+}
